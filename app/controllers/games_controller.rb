@@ -11,6 +11,7 @@ class GamesController < ApplicationController
   end
 
   def score
+    @score = (params[:score] || "").upcase
     if included?
       if english_word?(params[:score])
         @score = true
